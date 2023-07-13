@@ -1,2 +1,2 @@
 # dotfiles
-My personal config files. NixOS / Fedora
+My personal Fedora config files.
