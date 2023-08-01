@@ -9,19 +9,20 @@ if not status then
 end
 
 require("nvim-tree").setup({
-  sort_by = "case_sensitive",
-  view = {
-    width = 30,
-  },
-  renderer = {
-    root_folder_label = false,
-    highlight_git = false,
-    highlight_opened_files = "none",
+   sort_by = "case_sensitive",
+   view = {
+      width = 30,
+   },
+   renderer = {
+      root_folder_label = false,
+      highlight_git = false,
+      highlight_opened_files = "none",
 
-    indent_markers = {
-      enable = false,
-    },
-  filters = {
-    dotfiles = true,
-  },
+      indent_markers = {
+         enable = false,
+      },
+      filters = {
+         dotfiles = true,
+      },
+   },
 })
