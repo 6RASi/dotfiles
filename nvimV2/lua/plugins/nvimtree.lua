@@ -1,3 +1,6 @@
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- OR setup with some options
 local status, plugin = pcall(require, 'nvim-tree')
 if not status then
@@ -11,8 +14,13 @@ require("nvim-tree").setup({
     width = 30,
   },
   renderer = {
-    group_empty = true,
-  },
+    root_folder_label = false,
+    highlight_git = false,
+    highlight_opened_files = "none",
+
+    indent_markers = {
+      enable = false,
+    },
   filters = {
     dotfiles = true,
   },
