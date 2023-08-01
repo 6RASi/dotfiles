@@ -3,5 +3,7 @@ if not status then
     print('Error with plugin: ', plugin)
     return
 end
-plugin.setup({})
 
+require('nvim-autopairs').setup({
+  disable_filetype = { "TelescopePrompt" , "vim" },
+})
