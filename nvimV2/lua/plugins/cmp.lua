@@ -64,7 +64,7 @@
     { name = "nvim_lua" },
     { name = "path" },
   },
-}
+},
     --other 
     documentation = {
       border = border "CmpDocBorder",
