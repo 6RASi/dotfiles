@@ -67,7 +67,6 @@ cmp.setup({
    },
    --other
    documentation = {
-      border = border "CmpDocBorder",
       winhighlight = "Normal:CmpDoc",
    },
    })
