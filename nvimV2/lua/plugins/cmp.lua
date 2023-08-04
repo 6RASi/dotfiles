@@ -66,7 +66,7 @@ cmp.setup({
       },
    },
    --other
-   documentation = {
-      winhighlight = "Normal:CmpDoc",
-   },
+   --documentation = {
+      --winhighlight = "Normal:CmpDoc",
+   --},
    })
