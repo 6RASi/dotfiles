@@ -1,5 +1,6 @@
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
+vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", {})
 
 -- OR setup with some options
 local status, plugin = pcall(require, 'nvim-tree')
