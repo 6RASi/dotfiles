@@ -110,7 +110,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 local servers = {
-	"clangd",
 	"hls",
 	"gopls",
 	"pyright",
@@ -121,16 +120,9 @@ local servers = {
 	"html",
 	"emmet_ls",
 	"tailwindcss",
-	"taplo",
 	"graphql",
 	"dockerls",
-	"bashls",
-	"jdtls",
-	"svelte",
-	"astro",
-	"prismals",
 	"rnix",
-	"ocamllsp",
 	"grammarly",
 }
 
