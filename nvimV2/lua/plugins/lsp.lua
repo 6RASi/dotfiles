@@ -82,9 +82,6 @@ local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fo", ":lua vim.lsp.buf.format( {timeout_ms = 5000} )<CR>", opts)
 end
 
-lsp.diagnosticls.setup({
-	on_attach = on_attach,
-})
 
 -- Setup lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -93,14 +90,7 @@ capabilities.textDocument.foldingRange = {
 	dynamicRegistration = false,
 	lineFoldingOnly = true,
 }
--- local language_servers = require("lspconfig").util.available_servers() -- or list servers manually like {'gopls', 'clangd'}
--- for _, ls in ipairs(language_servers) do
--- 	require("lspconfig")[ls].setup({
--- 		capabilities = capabilities,
--- 		-- you can add other fields for setting up lsp server in this table
--- 	})
--- end
--- require("ufo").setup()
+
 
 require("lsp-inlayhints").setup()
 vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
@@ -135,7 +125,6 @@ local servers = {
 	"graphql",
 	"dockerls",
 	"bashls",
-	-- "sqls",
 	"jdtls",
 	"svelte",
 	"astro",
