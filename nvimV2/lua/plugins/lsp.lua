@@ -152,18 +152,6 @@ for _, server in ipairs(servers) do
 	})
 end
 
-require("rust-tools").setup({
-	server = {
-		on_attach = on_attach,
-		capabilities = capabilities,
-	},
-	tools = {
-		inlay_hints = {
-			auto = false,
-		},
-	},
-})
-
 lsp.tsserver.setup({
 	capabilities = capabilities,
 	on_attach = function(c, b)
