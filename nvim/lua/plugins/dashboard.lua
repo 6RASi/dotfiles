@@ -40,7 +40,7 @@ return footer
 end
 
 db.setup({
-theme = 'ayu',
+theme = 'doom',
 config = {
    header = custom_header,
    center = custom_center,
