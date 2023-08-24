@@ -77,6 +77,33 @@ plugin.setup{
       --   extension_config_key = value,
       -- }
       -- please take a look at the readme of the extension you want to configure
-   }
+   },
+        file_browser = {
+            theme = "dropdown",
+		      	previewer = false, -- override the file sorter
+            hijack_netrw = true,
+            mappings = {
+                ["i"] = {
+                    -- your custom insert mode mappings
+                },
+                ["n"] = {
+                    ['T'] = fb_actions.create,
+                    ['a'] = fb_actions.rename,
+                    ['dD'] = fb_actions.remove,
+                    ['o'] = fb_actions.open,
+                    ['h'] = fb_actions.goto_parent_dir,
+                    ['l'] = fb_actions.change_cwd,
+                    ['yy'] = fb_actions.copy,
+                    ['dd'] = fb_actions.move,
+                    ['gh'] = fb_actions.goto_home_dir,
+                    ['vv'] = fb_actions.select_all,
+                    ["backspace"] = fb_actions.toggle_hidden,
+                    -- your custom normal mode mappings
+                },
+            },
+        },
+	},
+
 
 }
+require("telescope").load_extension("file_browser")

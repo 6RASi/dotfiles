@@ -1,68 +1,49 @@
-local status, plugin = pcall(require, 'dashboard')
-if not status then
-    print('Error with plugin: ', plugin)
+local status, db = pcall(require, "dashboard")
+if (not status) then
     return
 end
 
-plugin.setup({
-    theme = 'doom',
-    config = {
-        header = randomsplash(),
-        center = {
-            {
-                icon = ' ',
-                icon_hl = '@variable',
-                desc = 'Find File',
-                desc_hl = 'String',
-                key = 'f',
-                keymap = 'SPC ff',
-                key_hl = 'Number',
-                action = 'Telescope find_files'
-            },
-            {
-                icon = ' ',
-                icon_hl = '@variable',
-                desc = 'File Browser',
-                desc_hl = 'String',
-                key = 'd',
-                keymap = 'SPC td',
-                key_hl = 'Number',
-                action = 'NvimTreeToggle'
-            },
-            {
-                icon = '󰚰 ',
-                icon_hl = '@variable',
-                desc = 'Update',
-                desc_hl = 'String',
-                key = 'u',
-                keymap = ':Lazy update',
-                key_hl = 'Number',
-                action = 'Lazy update'
-            },
-            {
-                icon = ' ',
-                icon_hl = '@variable',
-                desc = 'Transparency Toggle',
-                desc_hl = 'String',
-                key = 't',
-                keymap = 'SPC tt',
-                key_hl = 'Number',
-                action = 'TransparentToggle'
-            },
-            {
-                icon = '󱓥 ',
-                icon_hl = '@variable',
-                desc = 'Edit Neovim',
-                desc_hl = 'String',
-                key = 'e',
-                keymap = 'SPC en',
-                key_hl = 'Number',
-                action = 'lua edit_nvim()' -- Declared in functions.lua
-            },
 
-        },
-        footer = {
-            randomquote()
-        }
+ local custom_header = {
+
+    "   ▄▀▀▀▀▄       ▄▀▀▄ ▀▄      ▄▀▀█▀▄   	",
+    "  █      █     █  █ █ █     █   █  █  	",
+    "  █      █     ▐  █  ▀█     ▐   █  ▐  	",
+    "  ▀▄    ▄▀       █   █          █     	",
+    "    ▀▀▀▀       ▄▀   █        ▄▀▀▀▀▀▄  	",
+    "               █    ▐       █       █ 	",
+    "               ▐            ▐       ▐  ",
+     "                   										",
+}
+
+-- [[ custom_header = {
+ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+} ]]
+
+}
+local custom_center = {
+    {icon = "  ", icon_hl = 'Title', desc = "File Oldfiles ", desc_hl = 'String', key = "SPC f o", key_hl = 'Number', action = "Telescope oldfiles theme=dropdown"},
+    {icon = "  ", icon_hl = 'Title', desc = "Find File     ", desc_hl = 'String', key = "SPC f f", key_hl = 'Number', action = "Telescope find_files find_command=rg,--hidden,--files"},
+    {icon = "  ", icon_hl = 'Title', desc = "File Browser  ", desc_hl = 'String', key = "SPC f b", key_hl = 'Number', action = "Telescope file_browser theme=dropdown previewer=false"},
+    {icon = "  ", icon_hl = 'Title', desc = "Find Word     ", desc_hl = 'String', key = "SPC f w", key_hl = 'Number', action = "Telescope live_grep"},
+    {icon = " ",  icon_hl = 'Title', desc = "Git summary   ", desc_hl = "string", key = "SPC g s", key_hl = "Number", action = ":Git | :only<CR>"},
+}
+local custom_footer = function()
+    local footer = {'','','','','','Is it time for magic? 🎩'}
+    -- print(footer)
+    return footer
+end
+
+db.setup({
+    theme = 'ayu',
+    config = {
+        header = custom_header,
+        center = custom_center,
+        footer = custom_footer,
     }
 })
