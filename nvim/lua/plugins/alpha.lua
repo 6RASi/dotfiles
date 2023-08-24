@@ -24,9 +24,9 @@ dashboard.section.buttons.val = {
    },
 
    { type = 'padding', val = 2 },
-   dashboard.button( "nr", " " .. " Recent files",    ":Telescope oldfiles theme=dropdown"),
+   dashboard.button( "nr", " " .. " Recent files",    ":Telescope oldfiles theme=dropdown<CR>"),
    dashboard.button( "ff", " " .. " Find file",       ":Telescope find_files<CR>"),
-   dashboard.button( "fb", " " .. " File Browser",    ":Telescope file_browser theme=dropdown"),
+   dashboard.button( "fb", " " .. " File Browser",    ":Telescope file_browser theme=dropdown<CR>"),
    dashboard.button( "t",  " " .. " Find text",       ":Telescope live_grep <CR>"),
    dashboard.button( "g",  " " .. " Git summary",     ":Git | :only<CR>"),
    dashboard.button( "q",  " " .. " Quit nvim",       ":qa<CR>"),
