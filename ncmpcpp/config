@@ -1,0 +1,76 @@
+##### connection settings #####
+#
+mpd_host = localhost
+mpd_port = 6600
+
+##### directory settings #####
+#
+ncmpcpp_directory = ~/.config/ncmpcpp
+
+##### visualizer settings #####
+#
+visualizer_data_source = "localhost:5555"
+visualizer_output_name = "pipe"
+visualizer_in_stereo = "no"
+visualizer_type = "spectrum"
+visualizer_spectrum_smooth_look = no
+visualizer_look = "█┇"
+#visualizer_look = "●▮"
+
+# visualizer_color = "33,39,63,75,81,99,117,153,189"
+visualizer_color = 4,5,6,7,8
+
+##### progress bar settings #####
+#
+progressbar_look = "▂▂▂"
+progressbar_color = "black"
+progressbar_elapsed_color = "blue"
+
+##### colours settings #####
+#
+main_window_color = "blue"
+color1 = "white"
+color2 = "blue"
+
+##### visibility settings #####
+#
+header_visibility = "no"
+statusbar_visibility = "yes"
+titles_visibility = "no"
+
+##### apperance settings #####
+#
+now_playing_prefix = "$b$8$7 "
+now_playing_suffix = "  $/b$8"
+current_item_prefix = "$b$7$/b$3 "
+current_item_suffix = "  $8"
+song_status_format= "$7%t"
+song_window_title_format = "Music"
+
+#song_list_format = "{$7%a - $9}{$5%t$9}|{$0%f$9}$R{$3▕ %l$9}"
+song_columns_list_format = "(3f)[239]{} (35)[246]{t|f} (18)[cyan]{a} (30)[green]{b} (7f)[246]{l}"
+#song_status_format = "{{{$5%a$9}} $6♫$9 {$2%t$9}|{$0%f$9}{ $6♫$9 $3%b$9}}"
+song_library_format = "{%n $8-$9 }{%t}|{%f}"
+
+##### display settings #####
+#
+playlist_display_mode = "columns" #classic
+browser_display_mode  = "columns" #classic
+search_engine_display_mode = "columns" #classic
+playlist_editor_display_mode = "columns" #classic
+user_interface = "classic" #alternative
+
+##### other settings #####
+#
+message_delay_time = "3"
+playlist_shorten_total_times = "yes"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+display_bitrate = "no"
+external_editor = "nvim"
+mouse_support = "yes"
+regular_expressions = "extended"
+ignore_leading_the = "yes"
+
+startup_screen = "playlist"
+startup_slave_screen = "visualizer"
