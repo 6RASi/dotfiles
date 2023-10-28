@@ -1,1 +1,1 @@
-vim.api.nvim_command("colorscheme rose-pine")
+vim.api.nvim_command("colorscheme rose-pine-moon")
